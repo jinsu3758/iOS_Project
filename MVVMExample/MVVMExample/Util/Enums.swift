@@ -23,4 +23,5 @@ enum VC: String {
     case loginVC = "loginVC"
     case numVC = "numberVC"
     case colorVC = "colorVC"
+    case newLoginVC = "newLoginVC"
 }

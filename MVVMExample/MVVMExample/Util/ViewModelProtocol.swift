@@ -10,5 +10,5 @@ import Foundation
 
 protocol ViewModelProtocol: class {
     associatedtype Input
-    associatedtype Ouput
+    associatedtype Output
 }
