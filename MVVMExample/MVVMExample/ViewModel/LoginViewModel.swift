@@ -44,7 +44,6 @@ class LoginViewModel {
         user?.email = emailViewModel.data.value
         user?.pwd = passwordViewModel.data.value
         
-        print("로그인 성공")
         callback(true)
     }
     

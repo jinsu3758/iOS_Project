@@ -53,7 +53,7 @@ class MainViewController: UIViewController {
         
         
         nextBtn.rx.tap.subscribe ( onNext: { [weak self] in
-            let numVC = AppStoryboard.main.instance.instantiateViewController(withIdentifier: VC.numVC.rawValue)
+            let numVC = AppStoryboard.main.instance.instantiateViewController(withIdentifier: VC.num.rawValue)
                 as! NumberViewController
             self?.navigationController?.pushViewController(numVC, animated: true)
         }).disposed(by: disposeBag)

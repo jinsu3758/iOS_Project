@@ -19,7 +19,7 @@ class NewLoginViewModel: ViewModelProtocol {
     }
     
     struct Output {
-        let loginResult: Observable<User>
+        let loginResult: Observable<NewUser>
         let errorObservable: Observable<Error>
     }
     
@@ -29,13 +29,39 @@ class NewLoginViewModel: ViewModelProtocol {
     private let emailSubject = PublishSubject<String>()
     private let pwdSubject = PublishSubject<String>()
     private let loginDidTapSubject = PublishSubject<Void>()
-    private let loginResultSubject = PublishSubject<User>()
+    private let loginResultSubject = PublishSubject<NewUser>()
     private let errorSubject = PublishSubject<Error>()
+    private let disposeBag = DisposeBag()
     
-    init() {
+    private var credentialObservable: Observable<Credential> {
+        // combineLatest
+        // 두 Observable의 마지막 이벤트들을 묶어서 전달
+        return Observable.combineLatest(emailSubject.asObservable(), pwdSubject.asObservable()) { (email, pwd) in
+            return Credential(email: email, pwd: pwd)
+        }
+    }
+    
+    init(_ loginManager: LoginServiceProtocol) {
         input = Input(email: emailSubject.asObserver(), pwd: pwdSubject.asObserver()
             , loginDidTap: loginDidTapSubject.asObserver())
         output = Output(loginResult: loginResultSubject.asObserver(), errorObservable: errorSubject.asObserver())
+        
+        loginDidTapSubject.withLatestFrom(credentialObservable)
+            .flatMapLatest{ credentials in
+                // materialize
+                // observable in observable로 감싸줄 수 있음
+                return loginManager.onLogin(with: credentials).materialize()
+            }.subscribe(onNext: { [weak self] event in
+                switch event {
+                case.next(let user):
+                    self?.loginResultSubject.onNext(user)
+                case .error(let error):
+                    self?.errorSubject.onNext(error)
+                default:
+                    break
+                }
+            })
+            .disposed(by: disposeBag)
     }
     
     

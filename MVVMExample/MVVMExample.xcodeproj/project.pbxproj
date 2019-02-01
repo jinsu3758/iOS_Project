@@ -18,6 +18,8 @@
 		74A468F12202C0EC0084746E /* ViewModelProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74A468F02202C0EC0084746E /* ViewModelProtocol.swift */; };
 		74A468F32202C4E90084746E /* NewLoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74A468F22202C4E90084746E /* NewLoginViewController.swift */; };
 		74A468F52202C5880084746E /* NewLoginViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74A468F42202C5880084746E /* NewLoginViewModel.swift */; };
+		74A468F72202F4D90084746E /* Credential.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74A468F62202F4D90084746E /* Credential.swift */; };
+		74A468F92202F4FD0084746E /* LoginManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74A468F82202F4FD0084746E /* LoginManager.swift */; };
 		74F0FC0421F98A4C00B81975 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74F0FC0321F98A4C00B81975 /* AppDelegate.swift */; };
 		74F0FC0621F98A4C00B81975 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74F0FC0521F98A4C00B81975 /* MainViewController.swift */; };
 		74F0FC0921F98A4C00B81975 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 74F0FC0721F98A4C00B81975 /* Main.storyboard */; };
@@ -70,6 +72,8 @@
 		74A468F02202C0EC0084746E /* ViewModelProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewModelProtocol.swift; sourceTree = "<group>"; };
 		74A468F22202C4E90084746E /* NewLoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewLoginViewController.swift; sourceTree = "<group>"; };
 		74A468F42202C5880084746E /* NewLoginViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewLoginViewModel.swift; sourceTree = "<group>"; };
+		74A468F62202F4D90084746E /* Credential.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Credential.swift; sourceTree = "<group>"; };
+		74A468F82202F4FD0084746E /* LoginManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginManager.swift; sourceTree = "<group>"; };
 		74F0FC0021F98A4C00B81975 /* MVVMExample.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MVVMExample.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		74F0FC0321F98A4C00B81975 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		74F0FC0521F98A4C00B81975 /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
@@ -156,6 +160,7 @@
 				741A472B21FEB7B0001009E9 /* Enums.swift */,
 				74A468EE2202C0CD0084746E /* ViewControllerType.swift */,
 				74A468F02202C0EC0084746E /* ViewModelProtocol.swift */,
+				74A468F82202F4FD0084746E /* LoginManager.swift */,
 			);
 			path = Util;
 			sourceTree = "<group>";
@@ -250,6 +255,7 @@
 				74FB285D21FA8D4400B5AD7B /* Repository.swift */,
 				74FB286621FAD71000B5AD7B /* User.swift */,
 				741A472D21FEE9AD001009E9 /* Number.swift */,
+				74A468F62202F4D90084746E /* Credential.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -497,9 +503,11 @@
 				74A468F52202C5880084746E /* NewLoginViewModel.swift in Sources */,
 				74FB286021FA938600B5AD7B /* MainViewModel.swift in Sources */,
 				741A473221FEEA78001009E9 /* NumberViewModel.swift in Sources */,
+				74A468F92202F4FD0084746E /* LoginManager.swift in Sources */,
 				741C18582201269400257A58 /* ColorViewModel.swift in Sources */,
 				74A468F32202C4E90084746E /* NewLoginViewController.swift in Sources */,
 				74FB286F21FAE86600B5AD7B /* LoginViewModel.swift in Sources */,
+				74A468F72202F4D90084746E /* Credential.swift in Sources */,
 				74FB286221FA97BD00B5AD7B /* ApiUtil.swift in Sources */,
 				741A472C21FEB7B0001009E9 /* Enums.swift in Sources */,
 				741C185A2201363100257A58 /* ColorViewController.swift in Sources */,

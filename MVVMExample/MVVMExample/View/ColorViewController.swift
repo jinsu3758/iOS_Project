@@ -15,6 +15,7 @@ class ColorViewController: UIViewController {
     @IBOutlet weak var countLabel: UILabel!
     @IBOutlet weak var sketchView: UIView!
     @IBOutlet weak var changeBtn: UIButton!
+    @IBOutlet weak var nextBtn: UIButton!
     
     let viewModel = ColorViewModel()
     let disposeBag = DisposeBag()
@@ -41,28 +42,17 @@ class ColorViewController: UIViewController {
             .bind(to: countLabel.rx.text)
             .disposed(by: disposeBag)
         
-//        viewModel.count.asObservable()
-//            .subscribe({ count in
-//                if let cnt = count.element {
-//                    switch(cnt) {
-//                    case 0:
-//                        self.sketchView.backgroundColor = UIColor.red
-//                    case 1:
-//                        self.sketchView.backgroundColor = UIColor.blue
-//                    case 2:
-//                        self.sketchView.backgroundColor = UIColor.green
-//                    default:
-//                        break
-//                    }
-//                }
-//            }).disposed(by: disposeBag)
-        
-        
         changeBtn.rx.tap
             .bind(to: viewModel.changeCount)
             .disposed(by: disposeBag)
         
-        
+        nextBtn.rx.tap
+            .asDriver()
+            .drive(onNext: { [weak self] in
+                let newLoginVC = AppStoryboard.main.instance.instantiateViewController(withIdentifier: VC.newLogin.rawValue)
+                                    as! NewLoginViewController
+                self?.navigationController?.pushViewController(newLoginVC, animated: true)
+            })
     }
     
 

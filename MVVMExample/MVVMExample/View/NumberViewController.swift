@@ -36,7 +36,7 @@ class NumberViewController: UIViewController {
         nextBtn.rx.tap
             .asDriver()
             .drive(onNext: {  [weak self] in
-                let colorVC = AppStoryboard.main.instance.instantiateViewController(withIdentifier: VC.colorVC.rawValue)
+                let colorVC = AppStoryboard.main.instance.instantiateViewController(withIdentifier: VC.color.rawValue)
                     as! ColorViewController
                 self?.navigationController?.pushViewController(colorVC, animated: true)
                 }).disposed(by: disposeBag)

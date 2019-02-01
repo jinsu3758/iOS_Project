@@ -49,7 +49,7 @@ class LoginViewController: UIViewController {
             case .not:
                 self.viewModel.onLogin(callback: { code in
                     if code {
-                        let mainVC = AppStoryboard.main.instance.instantiateViewController(withIdentifier: VC.mainVC.rawValue)
+                        let mainVC = AppStoryboard.main.instance.instantiateViewController(withIdentifier: VC.main.rawValue)
                             as! MainViewController
                         self.navigationController?.pushViewController(mainVC, animated: true)
                     }

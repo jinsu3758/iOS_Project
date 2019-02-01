@@ -19,9 +19,13 @@ enum AppStoryboard: String {
 }
 
 enum VC: String {
-    case mainVC = "mainVC"
-    case loginVC = "loginVC"
-    case numVC = "numberVC"
-    case colorVC = "colorVC"
-    case newLoginVC = "newLoginVC"
+    case main = "mainVC"
+    case login = "loginVC"
+    case num = "numberVC"
+    case color = "colorVC"
+    case newLogin = "newLoginVC"
+}
+
+enum CustomError: Error {
+    case invalidForm
 }
