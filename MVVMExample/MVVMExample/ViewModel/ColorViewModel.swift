@@ -13,6 +13,7 @@ import RxCocoa
 class ColorViewModel {
     var count = BehaviorRelay<Int>(value: 0)
     
+    var aa = 10
     let changeCount = PublishRelay<Void>()
     let disposeBag = DisposeBag()
     

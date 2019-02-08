@@ -25,21 +25,37 @@ class NumberViewController: UIViewController {
     }
     
     func setBinding() {
-        viewModel.num.map{ "\($0)" }
-            .bind(to: label.rx.text)
+        viewModel.num.map{ "\($0)" }.asDriver(onErrorJustReturn: "error")
+            .drive(label.rx.text)
+//            .bind(to: label.rx.text)
             .disposed(by: disposeBag)
         
         changeBtn.rx.tap
             .bind(to: viewModel.didTapRelay)
             .disposed(by: disposeBag)
         
+//        nextBtn.rx.tap
+//            .subscribe(onNext: { [weak self] in
+//            let colorVC = AppStoryboard.main.instance.instantiateViewController(withIdentifier: VC.color.rawValue)
+//                as! ColorViewController
+//            self?.navigationController?.pushViewController(colorVC, animated: true)})
+//            .disposed(by: disposeBag)
+        
         nextBtn.rx.tap
-            .asDriver()
-            .drive(onNext: {  [weak self] in
+            .bind(onNext: { [weak self] in
                 let colorVC = AppStoryboard.main.instance.instantiateViewController(withIdentifier: VC.color.rawValue)
                     as! ColorViewController
                 self?.navigationController?.pushViewController(colorVC, animated: true)
-                }).disposed(by: disposeBag)
+            })
+            .disposed(by: disposeBag)
+//        nextBtn.rx.tap
+//            .asDriver()
+//            .drive(onNext: {  [weak self] in
+//                let colorVC = AppStoryboard.main.instance.instantiateViewController(withIdentifier: VC.color.rawValue)
+//                    as! ColorViewController
+//                self?.navigationController?.pushViewController(colorVC, animated: true)
+//                })
+//            .disposed(by: disposeBag)
     }
 
 

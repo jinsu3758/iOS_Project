@@ -12,8 +12,7 @@ import UIKit
 protocol ViewControllerType: class {
     associatedtype ViewModelType: ViewModelProtocol
     
-    
-    func configure(with viewModel: ViewModelType)
+    func setBinding(with viewModel: ViewModelType)
     
     static func create(with viewModel: ViewModelType) -> UIViewController
 }

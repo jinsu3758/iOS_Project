@@ -26,10 +26,11 @@ class NewLoginViewController: UIViewController, ViewControllerType {
     override func viewDidLoad() {
         super.viewDidLoad()
         viewModel = NewLoginViewModel(loginManager)
-        configure(with: viewModel)
+        setBinding(with: viewModel)
+        
     }
     
-    func configure(with viewModel: NewLoginViewModel) {
+    func setBinding(with viewModel: NewLoginViewModel) {
         emailTextField.rx.text.orEmpty
             .asObservable()
             .subscribe(viewModel.input.email)

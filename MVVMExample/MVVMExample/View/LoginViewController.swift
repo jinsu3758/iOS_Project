@@ -56,8 +56,5 @@ class LoginViewController: UIViewController {
                 })
             }
         }).disposed(by: disposeBag)
-        
-        
-        
     }
 }

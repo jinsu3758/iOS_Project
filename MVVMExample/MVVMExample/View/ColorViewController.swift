@@ -35,6 +35,8 @@ class ColorViewController: UIViewController {
                     self.sketchView.backgroundColor = UIColor.blue
                 case 2:
                     self.sketchView.backgroundColor = UIColor.green
+                case 3:
+                    self.sketchView.backgroundColor = UIColor.black
                 default:
                     break
                 }})
@@ -46,13 +48,23 @@ class ColorViewController: UIViewController {
             .bind(to: viewModel.changeCount)
             .disposed(by: disposeBag)
         
+        
+//        nextBtn.rx.tap
+//            .asDriver()
+//            .drive(onNext: { [weak self] in
+//                let newLoginVC = AppStoryboard.main.instance.instantiateViewController(withIdentifier: VC.newLogin.rawValue)
+//                                    as! NewLoginViewController
+//                self?.navigationController?.pushViewController(newLoginVC, animated: true)
+//            })
+//            .disposed(by: disposeBag)
+        
         nextBtn.rx.tap
-            .asDriver()
-            .drive(onNext: { [weak self] in
+            .bind(onNext: { [weak self] in
                 let newLoginVC = AppStoryboard.main.instance.instantiateViewController(withIdentifier: VC.newLogin.rawValue)
-                                    as! NewLoginViewController
+                    as! NewLoginViewController
                 self?.navigationController?.pushViewController(newLoginVC, animated: true)
             })
+            .disposed(by: disposeBag)
     }
     
 
