@@ -47,8 +47,6 @@ class ColorViewController: UIViewController {
         changeBtn.rx.tap
             .bind(to: viewModel.changeCount)
             .disposed(by: disposeBag)
-        
-        
 //        nextBtn.rx.tap
 //            .asDriver()
 //            .drive(onNext: { [weak self] in
