@@ -11,10 +11,9 @@ import SwiftUI
 import CoreLocation
 
 enum Category: String, CaseIterable, Codable, Hashable {
-    case featured = "Featured"
-    case lakes = "Lakes"
-    case rivers = "rivers"
-    case museum = "Museum"
+    case river = "강"
+    case bridge = "다리"
+    case museum = "박물관"
 }
 
 struct Landmark: Hashable, Codable {
