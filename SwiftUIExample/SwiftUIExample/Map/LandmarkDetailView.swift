@@ -9,24 +9,25 @@
 import SwiftUI
 
 struct LandmarkDetailView: View {
+    var landmark: Landmark
     var body: some View {
         VStack {
-            MapView()
+            MapView(coordinate: landmark.locationCoordinate)
                 .edgesIgnoringSafeArea(.top)
                 .frame(height: 300)
             
-            ImageCustomContentView()
+            ImageCustomContentView(image: landmark.image())
                 .offset(y: -100)
                 .padding(.bottom, -120)
             
             VStack(alignment: .leading) {
-                Text("예술의 전당").font(.title)
+                Text(landmark.name).font(.title)
                 
                 HStack {
-                    Text("서울 서초구 남부순환로 2406 예술의전당").font(.subheadline)
+                    Text(landmark.city).font(.subheadline)
                         .foregroundColor(Color.init(UIColor.gray.withAlphaComponent(0.8)))
                     Spacer()
-                    Text("서울특별시").font(.subheadline)
+                    Text(landmark.city).font(.subheadline)
                         .foregroundColor(Color.init(UIColor.gray.withAlphaComponent(0.8)))
                 }
             }.padding()
@@ -38,6 +39,6 @@ struct LandmarkDetailView: View {
 
 struct MapContentView_Previews: PreviewProvider {
     static var previews: some View {
-        LandmarkDetailView()
+        LandmarkDetailView(landmark: Landmark())
     }
 }

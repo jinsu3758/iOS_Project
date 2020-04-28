@@ -13,7 +13,9 @@ struct LandmarkRowView: View {
     
     var body: some View {
         HStack {
-            landmark.image(forSize: CGSize(width: 50, height: 50))
+            landmark.image()
+                .resizable()
+                .frame(width: 90, height: 70)
             Text(landmark.name)
         }
         
