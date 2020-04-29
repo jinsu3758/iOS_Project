@@ -17,28 +17,21 @@ struct LandmarkRowView: View {
                 .resizable()
                 .frame(width: 90, height: 70)
             Text(landmark.name)
+            Spacer()
+            
+            if landmark.isFavorite {
+                Image(systemName: "star.fill")
+                    .imageScale(.medium)
+                    .foregroundColor(.yellow)
+            }
         }
         
     }
 }
 
 struct LandmarkRowView_Previews: PreviewProvider {
-    static var landmarkData: [Landmark] {
-        var landmark: [Landmark] = []
-        do {
-            if let file = Bundle.main.url(forResource: "landmark", withExtension: "json") {
-                let data = try Data(contentsOf: file)
-                landmark = try JSONDecoder().decode([Landmark].self, from: data)
-            }
-            
-        }
-        catch {
-            
-        }
-        return landmark
-    }
     static var previews: some View {
-        LandmarkRowView(landmark: landmarkData[0])
+        LandmarkRowView(landmark: Constant.landmarkData[0])
             .previewLayout(.fixed(width: 300, height: 70))
     }
 }

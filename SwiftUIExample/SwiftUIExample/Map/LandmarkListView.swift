@@ -9,36 +9,43 @@
 import SwiftUI
 
 struct LandmarkListView: View {
-    var landmarkData: [Landmark] {
-        var landmark: [Landmark] = []
-        do {
-            if let file = Bundle.main.url(forResource: "landmark", withExtension: "json") {
-                let contents = try String(contentsOf: file)
-                print("\(contents)")
-                let data = try Data(contentsOf: file)
-                landmark = try JSONDecoder().decode([Landmark].self, from: data)
-            }
-            
-        }
-        catch {
-            
-        }
-        return landmark
-    }
+    @EnvironmentObject var userData: UserData
     
     var body: some View {
         NavigationView {
-            List(landmarkData) { landmark in
-                NavigationLink(destination: LandmarkDetailView(landmark: landmark)) {
-                    LandmarkRowView(landmark: landmark)
+            
+            List {
+                Toggle(isOn: $userData.showFavoritesOnly) {
+                    Text("Favorites only")
+                }
+                
+                ForEach(userData.landmarks) { landmark in
+                    if !self.userData.showFavoritesOnly || landmark.isFavorite {
+                        NavigationLink(destination: LandmarkDetailView(landmark: landmark)) {
+                            LandmarkRowView(landmark: landmark)
+                        }
+                    }
                 }
             }.navigationBarTitle(Text("랜드마크"))
+            
+//            List(Constant.landmarkData) { landmark in
+//                if !self.showFavoritesOnly || landmark.isFavorite {
+//                    NavigationLink(destination: LandmarkDetailView(landmark: landmark)) {
+//                        LandmarkRowView(landmark: landmark)
+//                    }
+//                }
+//            }.navigationBarTitle(Text("랜드마크"))
         }
     }
 }
 
 struct LandmarkListView_Previews: PreviewProvider {
     static var previews: some View {
-        LandmarkListView()
+        ForEach(["iPhone SE", "iPhone XS"], id: \.self) { deviceName in
+            LandmarkListView()
+            .environmentObject(UserData())
+            .previewDevice(PreviewDevice(rawValue: deviceName))
+            .previewDisplayName(deviceName)
+        }
     }
 }

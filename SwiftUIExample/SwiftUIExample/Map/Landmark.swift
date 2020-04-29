@@ -24,16 +24,13 @@ struct Landmark: Hashable, Codable, Identifiable {
     var city: String
     var category: Category
     var address: String
+    var isFavorite: Bool
     var locationCoordinate: CLLocationCoordinate2D {
         CLLocationCoordinate2D(latitude: coordinates.latitude, longitude: coordinates.longitude)
     }
     
     func image() -> Image {
         return Image(imageName)
-    }
-    
-    init() {
-        self.init()
     }
     
 }

@@ -29,6 +29,8 @@
 		7471AAD02456BECB0007DC2D /* LandmarkRowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7471AACF2456BECB0007DC2D /* LandmarkRowView.swift */; };
 		7471AAD22457B22B0007DC2D /* LandmarkListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7471AAD12457B22B0007DC2D /* LandmarkListView.swift */; };
 		7471AAD92457EC570007DC2D /* JSJsonDecoder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7471AAD82457EC570007DC2D /* JSJsonDecoder.swift */; };
+		7471AADB2459041C0007DC2D /* Constant.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7471AADA2459041C0007DC2D /* Constant.swift */; };
+		7471AADD245963D20007DC2D /* UserData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7471AADC245963D20007DC2D /* UserData.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -77,6 +79,8 @@
 		7471AACF2456BECB0007DC2D /* LandmarkRowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LandmarkRowView.swift; sourceTree = "<group>"; };
 		7471AAD12457B22B0007DC2D /* LandmarkListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LandmarkListView.swift; sourceTree = "<group>"; };
 		7471AAD82457EC570007DC2D /* JSJsonDecoder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JSJsonDecoder.swift; sourceTree = "<group>"; };
+		7471AADA2459041C0007DC2D /* Constant.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constant.swift; sourceTree = "<group>"; };
+		7471AADC245963D20007DC2D /* UserData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserData.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -214,6 +218,8 @@
 			isa = PBXGroup;
 			children = (
 				7471AAD82457EC570007DC2D /* JSJsonDecoder.swift */,
+				7471AADA2459041C0007DC2D /* Constant.swift */,
+				7471AADC245963D20007DC2D /* UserData.swift */,
 			);
 			path = Common;
 			sourceTree = "<group>";
@@ -351,6 +357,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				7471AACA2452CBCA0007DC2D /* Landmark.swift in Sources */,
+				7471AADB2459041C0007DC2D /* Constant.swift in Sources */,
 				740EB34B244D8C4C008D6FFE /* AppDelegate.swift in Sources */,
 				74238D9D2451115E00071A39 /* ListViewItem.swift in Sources */,
 				740EB34D244D8C4C008D6FFE /* SceneDelegate.swift in Sources */,
@@ -361,6 +368,7 @@
 				74238D9F2451266A00071A39 /* ListViewCell.swift in Sources */,
 				740EB34F244D8C4C008D6FFE /* ContentView.swift in Sources */,
 				7471AAC6245284210007DC2D /* MapView.swift in Sources */,
+				7471AADD245963D20007DC2D /* UserData.swift in Sources */,
 				7471AAD92457EC570007DC2D /* JSJsonDecoder.swift in Sources */,
 				74238DA624516E6E00071A39 /* ObservableObjectContentView.swift in Sources */,
 				7471AAD02456BECB0007DC2D /* LandmarkRowView.swift in Sources */,

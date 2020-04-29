@@ -5,6 +5,7 @@
         "address" : "서울 서초구 남부순환로 2406",
         "city" : "서울",
         "id" : 1001,
+        "isFavorite" : true,
         "coordinates" : {
             "latitude" : 37.4794695,
             "longitude" : 127.011494
@@ -17,6 +18,7 @@
         "address" : "서울 용산구 이촌동",
         "city" : "서울",
         "id" : 1002,
+        "isFavorite" : false,
         "coordinates" : {
             "latitude" : 37.5098196,
             "longitude" : 126.9815541

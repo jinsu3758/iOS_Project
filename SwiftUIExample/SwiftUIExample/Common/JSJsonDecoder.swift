@@ -11,7 +11,6 @@ import Foundation
 class JSJsonDecoder {
     static let shared = JSJsonDecoder()
     
-    
     func getJsonFromFile(_ fileName: String) -> Data? {
         do {
             if let file = Bundle.main.url(forResource: fileName, withExtension: "json") {
@@ -26,7 +25,7 @@ class JSJsonDecoder {
     }
     
     func decode<T: Codable>(completion: ((T?, Error?) -> Void)?) {
-        guard let data = getJsonFromFile("landmakr") else {
+        guard let data = getJsonFromFile("landmark") else {
             completion?(nil, nil)
             return
         }
