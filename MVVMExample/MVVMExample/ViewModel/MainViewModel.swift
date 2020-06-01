@@ -15,7 +15,8 @@ class MainViewModel: NSObject {
     // Variable은 BehaviorSubject를 감싸는 onNext()이벤트만 제출할 수 있는 래퍼
     // 할당 해제될 때, 자동으로 onCompleted() 이벤트를 보냄
     // Variable은 RxSwift 4.0에서 deprecated됐으므로 BehaviorRelay로 바꿀것
-    let searchText = Variable("")
+//    let searchText = Variable("")
+    let searchText = BehaviorRelay<String>(value: "")
     let txt = BehaviorRelay<String>(value: "")
     
     // Driver은 Observable과 다르게 MainScheduler에서 사용을 하며, UI layer에서 좀 더 직관적으로 사용하도록 제공하는 unit
