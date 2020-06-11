@@ -3,17 +3,17 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
 		745A9E372491B7E300C2E7A7 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 745A9E362491B7E300C2E7A7 /* AppDelegate.swift */; };
 		745A9E392491B7E300C2E7A7 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 745A9E382491B7E300C2E7A7 /* SceneDelegate.swift */; };
-		745A9E3B2491B7E300C2E7A7 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 745A9E3A2491B7E300C2E7A7 /* ViewController.swift */; };
 		745A9E3E2491B7E300C2E7A7 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 745A9E3C2491B7E300C2E7A7 /* Main.storyboard */; };
 		745A9E412491B7E300C2E7A7 /* RxMemo.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 745A9E3F2491B7E300C2E7A7 /* RxMemo.xcdatamodeld */; };
 		745A9E432491B7E300C2E7A7 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 745A9E422491B7E300C2E7A7 /* Assets.xcassets */; };
 		745A9E462491B7E300C2E7A7 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 745A9E442491B7E300C2E7A7 /* LaunchScreen.storyboard */; };
+		745A9E532491E9D200C2E7A7 /* Memo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 745A9E522491E9D200C2E7A7 /* Memo.swift */; };
 		CB68D8C85C0C57A5B7B624B1 /* Pods_RxMemo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 557117E6D83C76C1968CF742 /* Pods_RxMemo.framework */; };
 /* End PBXBuildFile section */
 
@@ -23,12 +23,12 @@
 		745A9E332491B7E300C2E7A7 /* RxMemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RxMemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		745A9E362491B7E300C2E7A7 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		745A9E382491B7E300C2E7A7 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		745A9E3A2491B7E300C2E7A7 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		745A9E3D2491B7E300C2E7A7 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		745A9E402491B7E300C2E7A7 /* RxMemo.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = RxMemo.xcdatamodel; sourceTree = "<group>"; };
 		745A9E422491B7E300C2E7A7 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		745A9E452491B7E300C2E7A7 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		745A9E472491B7E400C2E7A7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		745A9E522491E9D200C2E7A7 /* Memo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Memo.swift; sourceTree = "<group>"; };
 		8A9D1977F6E911596C754019 /* Pods-RxMemo.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RxMemo.debug.xcconfig"; path = "Target Support Files/Pods-RxMemo/Pods-RxMemo.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -50,7 +50,6 @@
 				8A9D1977F6E911596C754019 /* Pods-RxMemo.debug.xcconfig */,
 				20293990AC09C1A96A2AB368 /* Pods-RxMemo.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -75,16 +74,56 @@
 		745A9E352491B7E300C2E7A7 /* RxMemo */ = {
 			isa = PBXGroup;
 			children = (
+				745A9E512491E8EB00C2E7A7 /* Scene */,
+				745A9E502491E8D500C2E7A7 /* Service */,
+				745A9E4F2491E8C100C2E7A7 /* ViewModel */,
+				745A9E4E2491E8B600C2E7A7 /* ViewController */,
+				745A9E4D2491E89900C2E7A7 /* Model */,
 				745A9E362491B7E300C2E7A7 /* AppDelegate.swift */,
 				745A9E382491B7E300C2E7A7 /* SceneDelegate.swift */,
-				745A9E3A2491B7E300C2E7A7 /* ViewController.swift */,
-				745A9E3C2491B7E300C2E7A7 /* Main.storyboard */,
 				745A9E422491B7E300C2E7A7 /* Assets.xcassets */,
-				745A9E442491B7E300C2E7A7 /* LaunchScreen.storyboard */,
 				745A9E472491B7E400C2E7A7 /* Info.plist */,
 				745A9E3F2491B7E300C2E7A7 /* RxMemo.xcdatamodeld */,
 			);
 			path = RxMemo;
+			sourceTree = "<group>";
+		};
+		745A9E4D2491E89900C2E7A7 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				745A9E522491E9D200C2E7A7 /* Memo.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		745A9E4E2491E8B600C2E7A7 /* ViewController */ = {
+			isa = PBXGroup;
+			children = (
+				745A9E3C2491B7E300C2E7A7 /* Main.storyboard */,
+				745A9E442491B7E300C2E7A7 /* LaunchScreen.storyboard */,
+			);
+			path = ViewController;
+			sourceTree = "<group>";
+		};
+		745A9E4F2491E8C100C2E7A7 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		745A9E502491E8D500C2E7A7 /* Service */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Service;
+			sourceTree = "<group>";
+		};
+		745A9E512491E8EB00C2E7A7 /* Scene */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Scene;
 			sourceTree = "<group>";
 		};
 		85BF31E375819291DD5659AD /* Frameworks */ = {
@@ -210,10 +249,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				745A9E3B2491B7E300C2E7A7 /* ViewController.swift in Sources */,
 				745A9E372491B7E300C2E7A7 /* AppDelegate.swift in Sources */,
 				745A9E392491B7E300C2E7A7 /* SceneDelegate.swift in Sources */,
 				745A9E412491B7E300C2E7A7 /* RxMemo.xcdatamodeld in Sources */,
+				745A9E532491E9D200C2E7A7 /* Memo.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
