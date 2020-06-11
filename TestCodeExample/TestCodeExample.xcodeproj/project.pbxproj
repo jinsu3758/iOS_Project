@@ -17,6 +17,8 @@
 		74E6B0962485D2AB0022796B /* TestCodeExampleUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74E6B0952485D2AB0022796B /* TestCodeExampleUITests.swift */; };
 		74E6B0A424873F1F0022796B /* Pokemon.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74E6B0A324873F1F0022796B /* Pokemon.swift */; };
 		74E6B0A624875C330022796B /* PokemonTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74E6B0A524875C330022796B /* PokemonTests.swift */; };
+		74E6B0AA24878E080022796B /* FoodTrackerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74E6B0A924878E080022796B /* FoodTrackerTests.swift */; };
+		74E6B0AC24887CD30022796B /* Meal.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74E6B0AB24887CD30022796B /* Meal.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -53,6 +55,8 @@
 		74E6B0972485D2AB0022796B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		74E6B0A324873F1F0022796B /* Pokemon.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Pokemon.swift; sourceTree = "<group>"; };
 		74E6B0A524875C330022796B /* PokemonTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = PokemonTests.swift; path = TestCodeExample/PokemonTests.swift; sourceTree = SOURCE_ROOT; };
+		74E6B0A924878E080022796B /* FoodTrackerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FoodTrackerTests.swift; sourceTree = "<group>"; };
+		74E6B0AB24887CD30022796B /* Meal.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Meal.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -111,6 +115,7 @@
 				74E6B07E2485D2AB0022796B /* LaunchScreen.storyboard */,
 				74E6B0812485D2AB0022796B /* Info.plist */,
 				74E6B0A324873F1F0022796B /* Pokemon.swift */,
+				74E6B0AB24887CD30022796B /* Meal.swift */,
 			);
 			path = TestCodeExample;
 			sourceTree = "<group>";
@@ -119,6 +124,7 @@
 			isa = PBXGroup;
 			children = (
 				74E6B0A524875C330022796B /* PokemonTests.swift */,
+				74E6B0A924878E080022796B /* FoodTrackerTests.swift */,
 				74E6B08A2485D2AB0022796B /* TestCodeExampleTests.swift */,
 				74E6B08C2485D2AB0022796B /* Info.plist */,
 			);
@@ -265,6 +271,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				74E6B0AC24887CD30022796B /* Meal.swift in Sources */,
 				74E6B0782485D2A90022796B /* ViewController.swift in Sources */,
 				74E6B0A424873F1F0022796B /* Pokemon.swift in Sources */,
 				74E6B0742485D2A90022796B /* AppDelegate.swift in Sources */,
@@ -276,6 +283,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				74E6B0AA24878E080022796B /* FoodTrackerTests.swift in Sources */,
 				74E6B08B2485D2AB0022796B /* TestCodeExampleTests.swift in Sources */,
 				74E6B0A624875C330022796B /* PokemonTests.swift in Sources */,
 			);
