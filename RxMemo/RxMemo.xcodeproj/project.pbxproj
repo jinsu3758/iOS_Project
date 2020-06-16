@@ -28,6 +28,7 @@
 		745A9E6D2493647C00C2E7A7 /* SceneCoordinatorType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 745A9E6C2493647C00C2E7A7 /* SceneCoordinatorType.swift */; };
 		745A9E6F2493666C00C2E7A7 /* SceneCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 745A9E6E2493666C00C2E7A7 /* SceneCoordinator.swift */; };
 		745A9E7124937C5F00C2E7A7 /* CommonViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 745A9E7024937C5F00C2E7A7 /* CommonViewModel.swift */; };
+		745A9E742498873200C2E7A7 /* UIViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 745A9E732498873200C2E7A7 /* UIViewController.swift */; };
 		CB68D8C85C0C57A5B7B624B1 /* Pods_RxMemo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 557117E6D83C76C1968CF742 /* Pods_RxMemo.framework */; };
 /* End PBXBuildFile section */
 
@@ -57,6 +58,7 @@
 		745A9E6C2493647C00C2E7A7 /* SceneCoordinatorType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneCoordinatorType.swift; sourceTree = "<group>"; };
 		745A9E6E2493666C00C2E7A7 /* SceneCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneCoordinator.swift; sourceTree = "<group>"; };
 		745A9E7024937C5F00C2E7A7 /* CommonViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommonViewModel.swift; sourceTree = "<group>"; };
+		745A9E732498873200C2E7A7 /* UIViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewController.swift; sourceTree = "<group>"; };
 		8A9D1977F6E911596C754019 /* Pods-RxMemo.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RxMemo.debug.xcconfig"; path = "Target Support Files/Pods-RxMemo/Pods-RxMemo.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -102,6 +104,7 @@
 		745A9E352491B7E300C2E7A7 /* RxMemo */ = {
 			isa = PBXGroup;
 			children = (
+				745A9E722498871D00C2E7A7 /* Extension */,
 				745A9E512491E8EB00C2E7A7 /* Scene */,
 				745A9E502491E8D500C2E7A7 /* Service */,
 				745A9E4F2491E8C100C2E7A7 /* ViewModel */,
@@ -182,6 +185,14 @@
 				745A9E3F2491B7E300C2E7A7 /* RxMemo.xcdatamodeld */,
 			);
 			path = CoreDataStorage;
+			sourceTree = "<group>";
+		};
+		745A9E722498871D00C2E7A7 /* Extension */ = {
+			isa = PBXGroup;
+			children = (
+				745A9E732498873200C2E7A7 /* UIViewController.swift */,
+			);
+			path = Extension;
 			sourceTree = "<group>";
 		};
 		85BF31E375819291DD5659AD /* Frameworks */ = {
@@ -310,6 +321,7 @@
 				745A9E592491ECC900C2E7A7 /* MemoryStorage.swift in Sources */,
 				745A9E6524920ACF00C2E7A7 /* MemoComposeViewModel.swift in Sources */,
 				745A9E6F2493666C00C2E7A7 /* SceneCoordinator.swift in Sources */,
+				745A9E742498873200C2E7A7 /* UIViewController.swift in Sources */,
 				745A9E6B2493615E00C2E7A7 /* Scene.swift in Sources */,
 				745A9E5D2492097D00C2E7A7 /* MemoDetailViewController.swift in Sources */,
 				745A9E6724920BC000C2E7A7 /* ViewModelBindableType.swift in Sources */,
