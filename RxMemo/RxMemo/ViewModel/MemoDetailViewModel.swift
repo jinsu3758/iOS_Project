@@ -22,12 +22,12 @@ class MemoDetailViewModel: CommonViewModel {
         return format
     }()
     
-    var contents: BehaviorSubject<[String]>
+    var contents: BehaviorRelay<[String]>
     
     init(memo: Memo, title: String, sceneCoordinator: SceneCoordinatorType, storage: MemoStorageType) {
         self.memo = memo
         
-        contents = BehaviorSubject<[String]>(value: [
+        contents = BehaviorRelay<[String]>(value: [
             memo.content,
             formatter.string(from: memo.insertDate)
         ])
@@ -43,19 +43,19 @@ class MemoDetailViewModel: CommonViewModel {
         return Action { input in
             self.storage.update(memo: memo, content: input)
                 .subscribe(onNext: { updated in
-                    self.contents.onNext([
+                    self.contents.accept([
                         updated.content,
                         self.formatter.string(from: updated.insertDate)
                     ])
                 })
-                .disposed(by:self.rx.disposeBag)
+                .disposed(by:self.rx.disposeBag) 
             return Observable.empty()
         }
     }
     
     func makeEdition() -> CocoaAction {
         return CocoaAction { _ in
-            let composeViewModel = MemoComposeViewModel(title: "메모 편집", content: self.memo.content, sceneCooridnator: self.sceneCoordinator, storage: self.storage, saveAction: self.performUpdate(memo: self.memo))
+            let composeViewModel = MemoComposeViewModel(title: "메모 편집", content: self.contents.value[0], sceneCooridnator: self.sceneCoordinator, storage: self.storage, saveAction: self.performUpdate(memo: self.memo))
             
             let composeScene = Scene.compose(composeViewModel)
             return self.sceneCoordinator.transition(to: composeScene, using: .modal, animated: true).asObservable().map { _ in}

@@ -29,6 +29,7 @@
 		745A9E6F2493666C00C2E7A7 /* SceneCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 745A9E6E2493666C00C2E7A7 /* SceneCoordinator.swift */; };
 		745A9E7124937C5F00C2E7A7 /* CommonViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 745A9E7024937C5F00C2E7A7 /* CommonViewModel.swift */; };
 		745A9E742498873200C2E7A7 /* UIViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 745A9E732498873200C2E7A7 /* UIViewController.swift */; };
+		745A9E762498C33800C2E7A7 /* CoreDataStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 745A9E752498C33800C2E7A7 /* CoreDataStorage.swift */; };
 		CB68D8C85C0C57A5B7B624B1 /* Pods_RxMemo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 557117E6D83C76C1968CF742 /* Pods_RxMemo.framework */; };
 /* End PBXBuildFile section */
 
@@ -59,6 +60,7 @@
 		745A9E6E2493666C00C2E7A7 /* SceneCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneCoordinator.swift; sourceTree = "<group>"; };
 		745A9E7024937C5F00C2E7A7 /* CommonViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommonViewModel.swift; sourceTree = "<group>"; };
 		745A9E732498873200C2E7A7 /* UIViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewController.swift; sourceTree = "<group>"; };
+		745A9E752498C33800C2E7A7 /* CoreDataStorage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataStorage.swift; sourceTree = "<group>"; };
 		8A9D1977F6E911596C754019 /* Pods-RxMemo.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RxMemo.debug.xcconfig"; path = "Target Support Files/Pods-RxMemo/Pods-RxMemo.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -183,6 +185,7 @@
 			isa = PBXGroup;
 			children = (
 				745A9E3F2491B7E300C2E7A7 /* RxMemo.xcdatamodeld */,
+				745A9E752498C33800C2E7A7 /* CoreDataStorage.swift */,
 			);
 			path = CoreDataStorage;
 			sourceTree = "<group>";
@@ -318,6 +321,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				745A9E762498C33800C2E7A7 /* CoreDataStorage.swift in Sources */,
 				745A9E592491ECC900C2E7A7 /* MemoryStorage.swift in Sources */,
 				745A9E6524920ACF00C2E7A7 /* MemoComposeViewModel.swift in Sources */,
 				745A9E6F2493666C00C2E7A7 /* SceneCoordinator.swift in Sources */,
