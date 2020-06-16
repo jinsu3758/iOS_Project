@@ -47,6 +47,22 @@ class MemoDetailViewController: UIViewController, ViewModelBindableType {
         }.disposed(by: rx.disposeBag)
         
         editBtn.rx.action = viewModel.makeEdition()
+        
+        deleteBtn.rx.action = viewModel.makeDeleteAction()
+        
+        // action사용해서 바꿔보기
+        shareBtn.rx.tap
+            .throttle(.milliseconds(500), scheduler: MainScheduler.instance)
+            // 왜 여기는 weak?
+            .subscribe(onNext: { [weak self] _ in
+                guard let memo = self?.viewModel.memo.content else { return }
+                let vc = UIActivityViewController(activityItems: [memo], applicationActivities: nil)
+                self?.present(vc, animated: true, completion: nil)
+            })
+            .disposed(by: rx.disposeBag)
+        
+        
+        
 
     }
 
