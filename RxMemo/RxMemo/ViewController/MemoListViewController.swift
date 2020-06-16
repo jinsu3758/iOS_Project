@@ -10,6 +10,7 @@ import UIKit
 import RxSwift
 import RxCocoa
 import NSObject_Rx
+import RxDataSources
 
 class MemoListViewController: UIViewController, ViewModelBindableType {
     @IBOutlet weak var memoListTableView: UITableView!
@@ -28,10 +29,8 @@ class MemoListViewController: UIViewController, ViewModelBindableType {
             .disposed(by: rx.disposeBag)
         
         viewModel.memoList
-            .bind(to: memoListTableView.rx.items(cellIdentifier: "cell")) { row, memo, cell in
-                cell.textLabel?.text = memo.content
-                
-            }.disposed(by: rx.disposeBag)
+            .bind(to: memoListTableView.rx.items(dataSource: viewModel.dataSource))
+            .disposed(by: rx.disposeBag)
         
         addMemoBtn.rx.action = viewModel.makeCreateAction()
         
