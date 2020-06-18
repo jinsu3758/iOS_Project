@@ -48,7 +48,7 @@ class MemoDetailViewModel: CommonViewModel {
                         self.formatter.string(from: updated.insertDate)
                     ])
                 })
-                .disposed(by:self.rx.disposeBag) 
+                .disposed(by:self.rx.disposeBag)
             return Observable.empty()
         }
     }
