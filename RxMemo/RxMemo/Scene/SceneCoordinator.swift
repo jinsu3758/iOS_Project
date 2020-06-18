@@ -37,9 +37,10 @@ class SceneCoordinator: SceneCoordinatorType {
             subject.onCompleted()
         case .push:
             guard let nav = currentVC.navigationController else { subject.onError(TransitionError.navigationControllerMissing); break }
+            // navigation backButton을 그대로 쓸 경우에는 이렇게 close가 호출이 안 되므로
             nav.rx.willShow
-                .subscribe(onNext: { [unowned self] evt in
-                    self.currentVC = evt.viewController.sceneViewController
+                .subscribe(onNext: { [unowned self] event in
+                    self.currentVC = event.viewController.sceneViewController
                 })
                 .disposed(by: bag)
             nav.pushViewController(target, animated: animated)

@@ -8,7 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		745A9EA42499DB0300C2E7A7 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 745A9EA32499DB0300C2E7A7 /* AppDelegate.swift */; };
-		745A9EA62499DB0300C2E7A7 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 745A9EA52499DB0300C2E7A7 /* SceneDelegate.swift */; };
 		745A9EA82499DB0300C2E7A7 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 745A9EA72499DB0300C2E7A7 /* MainViewController.swift */; };
 		745A9EAB2499DB0300C2E7A7 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 745A9EA92499DB0300C2E7A7 /* Main.storyboard */; };
 		745A9EAD2499DB0300C2E7A7 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 745A9EAC2499DB0300C2E7A7 /* Assets.xcassets */; };
@@ -23,7 +22,6 @@
 /* Begin PBXFileReference section */
 		745A9EA02499DB0300C2E7A7 /* CoordinatorPatternExample.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CoordinatorPatternExample.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		745A9EA32499DB0300C2E7A7 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		745A9EA52499DB0300C2E7A7 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		745A9EA72499DB0300C2E7A7 /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
 		745A9EAA2499DB0300C2E7A7 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		745A9EAC2499DB0300C2E7A7 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -69,7 +67,6 @@
 				745A9EBE249A006B00C2E7A7 /* ViewController */,
 				745A9EB92499FB0F00C2E7A7 /* Coordinator */,
 				745A9EA32499DB0300C2E7A7 /* AppDelegate.swift */,
-				745A9EA52499DB0300C2E7A7 /* SceneDelegate.swift */,
 				745A9EA92499DB0300C2E7A7 /* Main.storyboard */,
 				745A9EAC2499DB0300C2E7A7 /* Assets.xcassets */,
 				745A9EAE2499DB0300C2E7A7 /* LaunchScreen.storyboard */,
@@ -176,7 +173,6 @@
 				745A9EBD2499FCE500C2E7A7 /* Storyboarded.swift in Sources */,
 				745A9EC0249A007B00C2E7A7 /* SecondViewController.swift in Sources */,
 				745A9EBB2499FB2D00C2E7A7 /* MainCoordinator.swift in Sources */,
-				745A9EA62499DB0300C2E7A7 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

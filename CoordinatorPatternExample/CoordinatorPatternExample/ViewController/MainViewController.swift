@@ -17,6 +17,8 @@ class MainViewController: UIViewController, Storyboarded {
         // Do any additional setup after loading the view.
     }
     @IBAction func nextVC(_ sender: Any) {
+//        coordinator?.showSecondVC()
+        delegate?.click(event: .push)
     }
     
 

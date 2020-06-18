@@ -13,10 +13,8 @@ import CoreData
 class AppDelegate: UIResponder, UIApplicationDelegate {
     var window: UIWindow?
 
-
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         //let storage = MemoryStorage()
-        
         let storage = CoreDataStorage(modelName: "RxMemo")
         let coordinator = SceneCoordinator(window: window!)
         let listViewModel = MemoListViewModel(title: "나의 메모", sceneCoordinator: coordinator, storage: storage)

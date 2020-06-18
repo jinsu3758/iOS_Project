@@ -10,6 +10,7 @@ import UIKit
 
 class SecondViewController: UIViewController, Storyboarded {
     weak var coordinator: MainCoordinator?
+     var delegate: ViewControllerHandler?
 
     override func viewDidLoad() {
         super.viewDidLoad()
