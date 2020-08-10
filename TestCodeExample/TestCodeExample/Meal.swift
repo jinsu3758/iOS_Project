@@ -17,9 +17,9 @@ class Meal {
     init?(name: String, photo: UIImage?, rating: Int) {
         if name.isEmpty {
             return nil
-   
+        }
     }
-    
+//
     convenience init?() {
         self.init(name: "Unknown", photo: nil, rating: 0)
     }

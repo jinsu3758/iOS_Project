@@ -20,7 +20,6 @@ class MemoListViewController: UIViewController, ViewModelBindableType {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
     }
     
     func bindViewModel() {

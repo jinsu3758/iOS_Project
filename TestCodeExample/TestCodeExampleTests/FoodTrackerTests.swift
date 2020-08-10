@@ -43,10 +43,5 @@ class FoodTrackerTests: XCTestCase {
         XCTAssertNil(meal)
     }
     
-    func test_initWithNegativeRank() {
-        let meal = Meal(name: "meal", photo: nil, rating: -1)
-        
-        XCTAssertNil(meal)
-    }
 
 }
