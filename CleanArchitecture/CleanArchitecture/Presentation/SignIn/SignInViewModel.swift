@@ -8,6 +8,10 @@
 
 import Foundation
 
-class SignInViewModel {
+class SignInViewModel: ViewModelType {
+    let useCase: SignInUseCaseType
     
+    init(useCase: UseCaseType) {
+        self.useCase = useCase as! SignInUseCaseType
+    }
 }

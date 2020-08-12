@@ -10,6 +10,8 @@ import UIKit
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
+    let appDIContainer: AppDIContainer = AppDIContainer()
+    
     var window: UIWindow?
     var coordinator: CoordinatorType?
 
@@ -19,7 +21,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         window = UIWindow(frame: UIScreen.main.bounds)
         window?.rootViewController = navigationController
         
-        coordinator = Coordinator(navigationController: navigationController)
+        coordinator = Coordinator(navigationController: navigationController, appDIContainer: appDIContainer)
         coordinator?.start(from: .signIn)
         
         window?.makeKeyAndVisible()

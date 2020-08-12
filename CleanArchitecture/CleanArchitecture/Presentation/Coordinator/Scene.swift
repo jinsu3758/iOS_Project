@@ -10,8 +10,14 @@ import Foundation
 import UIKit
 
 // 보류
+protocol UseCaseType {
+    
+}
+
 protocol SceneType {
     var storyboardName: String { get }
+    var viewController: UIViewController { get }
+    func getViewController(for useCase: UseCaseType) -> UIViewController
 }
 
 enum TransitionStyle {
@@ -30,11 +36,46 @@ enum Scene: String {
     }
 }
 
-
 extension Scene {
+    func getViewController<T>() -> T {
+        let storyboard = UIStoryboard(name: self.storyboardName, bundle: nil)
+        let viewController = storyboard.instantiateViewController(withIdentifier: self.rawValue) as! T
+        return viewController
+    }
+    
     var viewController: UIViewController {
         let storyboard = UIStoryboard(name: self.storyboardName, bundle: nil)
         let viewController = storyboard.instantiateViewController(withIdentifier: self.rawValue)
         return viewController
     }
 }
+
+enum UserScene: String, SceneType {
+    case signIn
+    
+    var storyboardName: String {
+        return "User"
+    }
+    
+    func getViewController(for useCase: UseCaseType) -> UIViewController {
+        let storyboard = UIStoryboard(name: self.storyboardName, bundle: nil)
+        //            let viewController = storyboard.instantiateViewController(withIdentifier: self.rawValue)
+        switch  self {
+        case .signIn:
+            var viewController = storyboard.instantiateViewController(withIdentifier: self.rawValue) as! SignInViewController
+            viewController.bindViewModel(SignInViewModel(useCase: useCase))
+        }
+        return viewController
+    }
+    
+    var viewController: UIViewController {
+        let storyboard = UIStoryboard(name: self.storyboardName, bundle: nil)
+        let viewController = storyboard.instantiateViewController(withIdentifier: self.rawValue)
+        return viewController
+    }
+    
+    
+}
+
+
+

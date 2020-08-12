@@ -8,10 +8,14 @@
 
 import UIKit
 
-class SignInViewController: UIViewController {
-
+class SignInViewController: UIViewController, ViewControllerType {
+    var viewModel: ViewModelType!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+    }
+    
+    func bindView() {
         
     }
 

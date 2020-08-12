@@ -20,15 +20,32 @@ protocol CoordinatorType {
 class Coordinator: CoordinatorType {
     
     let navigationController: UINavigationController
+    let appDIContainer: AppDIContainer
     var currentViewController: UIViewController
     
-    init(navigationController: UINavigationController) {
+    init(navigationController: UINavigationController, appDIContainer: AppDIContainer) {
         self.navigationController = navigationController
+        self.appDIContainer = appDIContainer
         self.currentViewController = navigationController
     }
     
     func start(from scene: Scene) {
         transition(to: scene, style: .push, animated: false)
+    }
+    
+    func trans(to scene: UserScene) {
+        let userDIContainer = appDIContainer.makeUserDIContainer()
+        
+        switch scene {
+        case .signIn:
+            let useCase = userDIContainer.makeSignInUseCase()
+            let vc = scene.getViewController(for: useCase)
+            
+        }
+        
+        
+//        var vc: SignInViewController = scene.getViewController()
+//        vc.bindViewModel(viewModel as! SignInViewModel)
     }
     
     @discardableResult
