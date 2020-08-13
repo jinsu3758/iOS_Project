@@ -8,6 +8,10 @@
 
 import Foundation
 
+protocol DIContainerType {
+    
+}
+
 final class AppDIContainer {
     func makeUserDIContainer() -> UserDIContainer {
         return UserDIContainer()

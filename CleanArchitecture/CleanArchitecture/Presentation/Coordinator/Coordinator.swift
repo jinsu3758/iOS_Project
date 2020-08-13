@@ -33,21 +33,21 @@ class Coordinator: CoordinatorType {
         transition(to: scene, style: .push, animated: false)
     }
     
-    func trans(to scene: UserScene) {
-        let userDIContainer = appDIContainer.makeUserDIContainer()
-        
-        switch scene {
-        case .signIn:
-            let useCase = userDIContainer.makeSignInUseCase()
-            let vc = scene.getViewController(for: useCase)
-            
-        }
-        
-        
-//        var vc: SignInViewController = scene.getViewController()
-//        vc.bindViewModel(viewModel as! SignInViewModel)
-    }
-    
+//    func trans(to scene: UserScene) {
+//        let userDIContainer = appDIContainer.makeUserDIContainer()
+//
+//        switch scene {
+//        case .signIn:
+//            let useCase = userDIContainer.makeSignInUseCase()
+//            let vc = scene.getViewController(for: useCase)
+//
+//        }
+
+////
+////        var vc: SignInViewController = scene.getViewController()
+////        vc.bindViewModel(viewModel as! SignInViewModel)
+//    }
+
     @discardableResult
     func transition(to scene: Scene, style: TransitionStyle, animated: Bool) -> Completable {
         let viewController = scene.viewController

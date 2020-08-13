@@ -27,6 +27,8 @@
 		74E2C23A24E3A46D0075698A /* ViewModelType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74E2C23924E3A46D0075698A /* ViewModelType.swift */; };
 		74E2C23E24E3B5820075698A /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74E2C23D24E3B5820075698A /* BaseViewController.swift */; };
 		74E2C24024E3B5C30075698A /* BaseViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74E2C23F24E3B5C30075698A /* BaseViewModel.swift */; };
+		74E2C24224E506C80075698A /* SignInCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74E2C24124E506C80075698A /* SignInCoordinator.swift */; };
+		74E2C24424E508CC0075698A /* AppCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74E2C24324E508CC0075698A /* AppCoordinator.swift */; };
 		AE568E7C94ABDD78E929232F /* Pods_CleanArchitecture.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 64AF09A267D1AB7B67408078 /* Pods_CleanArchitecture.framework */; };
 		C7DFC3140D6080B51DCF3328 /* Pods_CleanArchitectureTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6134AC37C8EBF33F89281D48 /* Pods_CleanArchitectureTests.framework */; };
 /* End PBXBuildFile section */
@@ -80,6 +82,8 @@
 		74E2C23924E3A46D0075698A /* ViewModelType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewModelType.swift; sourceTree = "<group>"; };
 		74E2C23D24E3B5820075698A /* BaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
 		74E2C23F24E3B5C30075698A /* BaseViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewModel.swift; sourceTree = "<group>"; };
+		74E2C24124E506C80075698A /* SignInCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInCoordinator.swift; sourceTree = "<group>"; };
+		74E2C24324E508CC0075698A /* AppCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppCoordinator.swift; sourceTree = "<group>"; };
 		94A195DFB13E56149BD1BE18 /* Pods-CleanArchitecture-CleanArchitectureUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CleanArchitecture-CleanArchitectureUITests.release.xcconfig"; path = "Target Support Files/Pods-CleanArchitecture-CleanArchitectureUITests/Pods-CleanArchitecture-CleanArchitectureUITests.release.xcconfig"; sourceTree = "<group>"; };
 		BB74D5EB88BE109E1EC93F8B /* Pods-CleanArchitecture.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CleanArchitecture.debug.xcconfig"; path = "Target Support Files/Pods-CleanArchitecture/Pods-CleanArchitecture.debug.xcconfig"; sourceTree = "<group>"; };
 		BDE3852A6467CA3A8A0DFFC4 /* Pods-CleanArchitectureTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CleanArchitectureTests.debug.xcconfig"; path = "Target Support Files/Pods-CleanArchitectureTests/Pods-CleanArchitectureTests.debug.xcconfig"; sourceTree = "<group>"; };
@@ -203,6 +207,7 @@
 			children = (
 				74E2C1ED24E131570075698A /* SignInViewController.swift */,
 				74E2C22424E23E380075698A /* SignInViewModel.swift */,
+				74E2C24124E506C80075698A /* SignInCoordinator.swift */,
 			);
 			path = SignIn;
 			sourceTree = "<group>";
@@ -220,6 +225,7 @@
 			children = (
 				74E2C22A24E36C780075698A /* DIContainer */,
 				74E2C1E924E131570075698A /* AppDelegate.swift */,
+				74E2C24324E508CC0075698A /* AppCoordinator.swift */,
 			);
 			path = Application;
 			sourceTree = "<group>";
@@ -558,6 +564,8 @@
 				74E2C23824E38F4C0075698A /* UserRepository.swift in Sources */,
 				74E2C22C24E36C850075698A /* AppDIContainer.swift in Sources */,
 				74E2C24024E3B5C30075698A /* BaseViewModel.swift in Sources */,
+				74E2C24424E508CC0075698A /* AppCoordinator.swift in Sources */,
+				74E2C24224E506C80075698A /* SignInCoordinator.swift in Sources */,
 				74E2C1EE24E131570075698A /* SignInViewController.swift in Sources */,
 				74E2C1EA24E131570075698A /* AppDelegate.swift in Sources */,
 				74E2C23624E38EFE0075698A /* SignInUseCase.swift in Sources */,
