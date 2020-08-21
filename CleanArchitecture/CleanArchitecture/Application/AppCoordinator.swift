@@ -18,7 +18,7 @@ final class AppCoordinator {
     }
     
     func start() {
-//        let signInCoordinator = SignInCoordinator()
-        
+        let signInCoordinator = SignInCoordinator(navigationController: navigationController)
+        signInCoordinator.start()
     }
 }

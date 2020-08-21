@@ -27,6 +27,13 @@ struct ObservableObjectContentView: View {
                 }
             }.padding(20)
             
+            VStack {
+                Text("\(countObject.thirdCount)").font(.largeTitle)
+                Button("세번째 ") {
+                    self.countObject.thirdCount += 1
+                }
+            }.padding(20)
+            
             ChildTextView()
             ChildButtonView()
         }
@@ -64,4 +71,6 @@ class CountObject: ObservableObject {
             }
         }
     }
+    
+    var thirdCount: Int = 0
 }

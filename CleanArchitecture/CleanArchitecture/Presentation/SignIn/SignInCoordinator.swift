@@ -10,12 +10,16 @@ import UIKit
 
 class SignInCoordinator {
     private let navigationController: UINavigationController
+    private let userDIContainer = UserDIContainer()
     
     init(navigationController: UINavigationController) {
         self.navigationController = navigationController
     }
     
     func start() {
+        var signInViewController = SignInViewController()
+        let signInViewModel = userDIContainer.makeSignInViewModel()
+        signInViewController.bindViewModel(<#T##model: ViewModelType##ViewModelType#>)
         
     }
 }
