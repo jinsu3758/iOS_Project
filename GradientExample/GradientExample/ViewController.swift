@@ -29,14 +29,20 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        gradient = GradientView(frame: gradientView.bounds, style: .leftDiagonal, colors: colors)
+        let aColor = UIColor(hex: 0xF5B2B3).cgColor
+        let bColor = UIColor(hex: 0xCEEFF4).cgColor
+        let cColor = UIColor(hex: 0xB9C8E7).cgColor
+        let dColor = UIColor(hex: 0xF3F4D0).cgColor
+        colors = [aColor, bColor, cColor]
+        
+        gradient = GradientView(frame: gradientView.bounds, style: .conic, colors: colors)
         gradientView.addSubview(gradient)
         
         
 //        let gradientLayer = CAGradientLayer()
         gradientLayer.frame = self.view.frame
-        gradientLayer.colors = [UIColor.red.cgColor, UIColor.blue.cgColor, UIColor.yellow.cgColor]
-        gradientLayer.locations = [0, 0.3, 1]
+        gradientLayer.colors = [aColor, bColor, cColor]
+//        gradientLayer.locations = [0, 0.3, 1]
 //        gradientView.layer.addSublayer(gradientLayer)
         
         // 수직은 default
@@ -59,18 +65,19 @@ class ViewController: UIViewController {
         
         
 //         오른쪽 대각선
-        
         gradientLayer.startPoint = CGPoint(x: 1, y: 0)
         gradientLayer.endPoint = CGPoint(x: 0, y: 1)
         
-//        self.view.layer.addSublayer(gradientLayer)
         
         // 방사형
 //        gradientLayer.type = .radial
 //        gradientLayer.startPoint = CGPoint(x: 0.5, y: 0.5)
 //        gradientLayer.endPoint = CGPoint(x: 1, y: 1)
         
-//        setAnimation([UIColor.green.cgColor, UIColor.gray.cgColor, UIColor.brown.cgColor])
+        
+        
+//        self.view.layer.addSublayer(gradientLayer)
+//        setAnimation([cColor, dColor, aColor])
         
         // Do any additional setup after loading the view.
     }
@@ -92,7 +99,10 @@ class ViewController: UIViewController {
     }
 
     @IBAction func startAnimation(_ sender: Any) {
-        gradient.setAnimation([UIColor.green.cgColor, UIColor.gray.cgColor, UIColor.brown.cgColor], withDuration: 1.5)
+        let aColor = UIColor(hex: 0xF5B2B3).cgColor
+        let bColor = UIColor(hex: 0xCEEFF4).cgColor
+        let cColor = UIColor(hex: 0xB9C8E7).cgColor
+        gradient.setAnimation([cColor, aColor, bColor], withDuration: 1.5)
     }
     
     @IBAction func stopAnimation(_ sender: Any) {

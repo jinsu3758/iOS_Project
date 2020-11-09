@@ -22,9 +22,7 @@ class TabBarController: UITabBarController {
         if let tabBarItems = tabBar.items {
             tabBarItems.forEach { item in
                 item.setTitleTextAttributes([.font : UIFont.systemFont(ofSize: 9, weight: .regular)], for: .normal)
-                
             }
-            
         }
     }
     

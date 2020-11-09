@@ -3,16 +3,19 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 52;
 	objects = {
 
 /* Begin PBXBuildFile section */
+		7459176F255267F900C94DDE /* RxCocoa in Frameworks */ = {isa = PBXBuildFile; productRef = 7459176E255267F900C94DDE /* RxCocoa */; };
+		74591771255267F900C94DDE /* RxSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 74591770255267F900C94DDE /* RxSwift */; };
 		7481CB712539967F009FFCA7 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7481CB702539967F009FFCA7 /* AppDelegate.swift */; };
 		7481CB752539967F009FFCA7 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7481CB742539967F009FFCA7 /* ViewController.swift */; };
 		7481CB782539967F009FFCA7 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7481CB762539967F009FFCA7 /* Main.storyboard */; };
 		7481CB7A2539967F009FFCA7 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7481CB792539967F009FFCA7 /* Assets.xcassets */; };
 		7481CB7D2539967F009FFCA7 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7481CB7B2539967F009FFCA7 /* LaunchScreen.storyboard */; };
 		7481CB8A253D47D3009FFCA7 /* GradientView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7481CB89253D47D3009FFCA7 /* GradientView.swift */; };
+		74916DAD254015B000D7C50F /* ImageHueViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74916DAC254015B000D7C50F /* ImageHueViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +27,7 @@
 		7481CB7C2539967F009FFCA7 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		7481CB7E2539967F009FFCA7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		7481CB89253D47D3009FFCA7 /* GradientView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GradientView.swift; sourceTree = "<group>"; };
+		74916DAC254015B000D7C50F /* ImageHueViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageHueViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -31,6 +35,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				74591771255267F900C94DDE /* RxSwift in Frameworks */,
+				7459176F255267F900C94DDE /* RxCocoa in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -63,6 +69,7 @@
 				7481CB7B2539967F009FFCA7 /* LaunchScreen.storyboard */,
 				7481CB7E2539967F009FFCA7 /* Info.plist */,
 				7481CB89253D47D3009FFCA7 /* GradientView.swift */,
+				74916DAC254015B000D7C50F /* ImageHueViewController.swift */,
 			);
 			path = GradientExample;
 			sourceTree = "<group>";
@@ -83,6 +90,10 @@
 			dependencies = (
 			);
 			name = GradientExample;
+			packageProductDependencies = (
+				7459176E255267F900C94DDE /* RxCocoa */,
+				74591770255267F900C94DDE /* RxSwift */,
+			);
 			productName = GradientExample;
 			productReference = 7481CB6D2539967F009FFCA7 /* GradientExample.app */;
 			productType = "com.apple.product-type.application";
@@ -110,6 +121,9 @@
 				Base,
 			);
 			mainGroup = 7481CB642539967F009FFCA7;
+			packageReferences = (
+				7459176D255267F900C94DDE /* XCRemoteSwiftPackageReference "RxSwift" */,
+			);
 			productRefGroup = 7481CB6E2539967F009FFCA7 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -140,6 +154,7 @@
 				7481CB752539967F009FFCA7 /* ViewController.swift in Sources */,
 				7481CB712539967F009FFCA7 /* AppDelegate.swift in Sources */,
 				7481CB8A253D47D3009FFCA7 /* GradientView.swift in Sources */,
+				74916DAD254015B000D7C50F /* ImageHueViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -343,6 +358,30 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		7459176D255267F900C94DDE /* XCRemoteSwiftPackageReference "RxSwift" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/ReactiveX/RxSwift.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 5.1.1;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		7459176E255267F900C94DDE /* RxCocoa */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 7459176D255267F900C94DDE /* XCRemoteSwiftPackageReference "RxSwift" */;
+			productName = RxCocoa;
+		};
+		74591770255267F900C94DDE /* RxSwift */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 7459176D255267F900C94DDE /* XCRemoteSwiftPackageReference "RxSwift" */;
+			productName = RxSwift;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 7481CB652539967F009FFCA7 /* Project object */;
 }
