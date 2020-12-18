@@ -94,7 +94,6 @@
         <!--Next View Controller-->
         <scene sceneID="7is-9z-kbS">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="O2z-HB-DEr" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
                 <viewController id="xzP-sm-fas" customClass="NextViewController" customModule="ClosureCapture" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="5og-cK-qjh">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
@@ -164,6 +163,7 @@
                         <outlet property="weakButton" destination="zIp-iy-at2" id="0lo-vQ-SDe"/>
                     </connections>
                 </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="O2z-HB-DEr" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1950" y="133"/>
         </scene>

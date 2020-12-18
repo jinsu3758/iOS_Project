@@ -31,14 +31,14 @@ class NextViewController: UIViewController {
 
     @IBAction func tapNormal(_ sender: Any) {
         
-//        animation()
+        animation()
 //        completion()
         
-        UIView.animate(withDuration: 3.0, animations: {
-            self.normalButton.frame = self.normalButton.frame.offsetBy(dx: -400, dy: 0)
-        }, completion: { _ in
-            self.completion()
-        })
+//        UIView.animate(withDuration: 3.0, animations: {
+//            self.normalButton.frame = self.normalButton.frame.offsetBy(dx: -400, dy: 0)
+//        }, completion: { _ in
+//            self.completion()
+//        })
 //
         DispatchQueue.main.asyncAfter(deadline: .now() + 1.0, execute: {
             self.navigationController?.popViewController(animated: true)
@@ -72,6 +72,10 @@ class NextViewController: UIViewController {
     }
     
     func completion() {
+        var a = 0
+//        for i in 0..<10000000 {
+//            a += i
+//        }
         print("completion")
     }
 }

@@ -13,24 +13,27 @@ class RxViewController: UIViewController {
     @IBOutlet weak var button: UIButton!
     @IBOutlet weak var popButton: UIButton!
     
-    let disposeBag = DisposeBag()
+    var disposeBag = DisposeBag()
     
     override func viewDidLoad() {
         super.viewDidLoad()
 
         
         // 강한 참조일 경우 deinint 호출 x - 순환참조 일어남
-        // popr이 바로 안 됨
+        // pop이 바로 안 됨
         // unowned self 가능함
-//        button.rx.tap
-//            .asDriver()
-//            .drive(onNext: { [unowned self] in
+        
+        button.rx.tap
+            .asDriver()
+            .drive(onNext: { [unowned self] in
+                print("wewwerwer")
 //                self.navigationController?.popViewController(animated: true)
-//                let b = self.doSomething()
-//                let c = self.doSomething()
-//
-//            })
-//            .disposed(by: disposeBag)
+                let b = self.doSomething()
+                let c = self.doSomething()
+
+            })
+            
+        
         
         // 위와 동일
 //        button.rx.tap
@@ -47,14 +50,14 @@ class RxViewController: UIViewController {
 //            .disposed(by: disposeBag)
         
         
-        button.rx.tap
-            .asDriver()
-            .drive(onNext: {
-                let b = self.doSomething()
-                let c = self.doSomething()
-                self.navigationController?.popViewController(animated: true)
-            })
-            .disposed(by: disposeBag)
+//        button.rx.tap
+//            .asDriver()
+//            .drive(onNext: {
+//                let b = self.doSomething()
+//                let c = self.doSomething()
+//                self.navigationController?.popViewController(animated: true)
+//            })
+//            .disposed(by: disposeBag)
             
 //        DispatchQueue.main.asyncAfter(deadline: .now() + 1.0, execute: {
 //            self.navigationController?.popViewController(animated: true)
@@ -62,11 +65,20 @@ class RxViewController: UIViewController {
 //        })
         popButton.rx.tap
             .asDriver()
-            .drive(onNext: { [unowned self] in
+            .drive(onNext: {
                 self.navigationController?.popViewController(animated: true)
             })
             .disposed(by: disposeBag)
+        
+        DispatchQueue.main.asyncAfter(deadline: .now() + 1.0, execute: {
+            self.navigationController?.popViewController(animated: true)
+        })
             
+    }
+    
+    override func viewDidDisappear(_ animated: Bool) {
+        super.viewDidDisappear(true)
+//        disposeBag = DisposeBag()
     }
     
     deinit {
@@ -76,7 +88,7 @@ class RxViewController: UIViewController {
     func doSomething() -> Int {
         print("do something")
         var a = 0
-        for i in 0...5000000 {
+        for i in 0...5000 {
             a += i
         }
         return a
