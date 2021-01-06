@@ -20,7 +20,7 @@ class NextViewController: UIViewController {
     lazy var completionHandler: (Bool) -> Void = { _ in
         self.completion()
     }
-    
+    var a: Int = 0
     override func viewDidLoad() {
         super.viewDidLoad()
     }
@@ -31,7 +31,7 @@ class NextViewController: UIViewController {
 
     @IBAction func tapNormal(_ sender: Any) {
         
-        animation()
+//        animation()
 //        completion()
         
 //        UIView.animate(withDuration: 3.0, animations: {
@@ -39,10 +39,20 @@ class NextViewController: UIViewController {
 //        }, completion: { _ in
 //            self.completion()
 //        })
+        
+        DispatchQueue.main.async {
+            for _ in 0..<10000000 {
+                self.a += 1
+            }
+            print(self.a)
+        }
+        navigationController?.popViewController(animated: true)
+        
+//        DispatchQueue.main.asyncAfter(deadline: .now() + 1.0, execute: {
+//            self.navigationController?.popViewController(animated: true)
+//        })
 //
-        DispatchQueue.main.asyncAfter(deadline: .now() + 1.0, execute: {
-            self.navigationController?.popViewController(animated: true)
-        })
+        
         
     }
     
