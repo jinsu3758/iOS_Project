@@ -20,7 +20,7 @@ class NextViewController: UIViewController {
     lazy var completionHandler: (Bool) -> Void = { _ in
         self.completion()
     }
-    var a: Int = 0
+    
     override func viewDidLoad() {
         super.viewDidLoad()
     }
@@ -31,7 +31,7 @@ class NextViewController: UIViewController {
 
     @IBAction func tapNormal(_ sender: Any) {
         
-//        animation()
+        animation()
 //        completion()
         
 //        UIView.animate(withDuration: 3.0, animations: {
@@ -39,31 +39,34 @@ class NextViewController: UIViewController {
 //        }, completion: { _ in
 //            self.completion()
 //        })
-        
-        DispatchQueue.main.async {
-            for _ in 0..<10000000 {
-                self.a += 1
-            }
-            print(self.a)
-        }
-        navigationController?.popViewController(animated: true)
-        
-//        DispatchQueue.main.asyncAfter(deadline: .now() + 1.0, execute: {
-//            self.navigationController?.popViewController(animated: true)
-//        })
 //
-        
+        DispatchQueue.main.asyncAfter(deadline: .now() + 1.0, execute: {
+            self.navigationController?.popViewController(animated: true)
+        })
         
     }
     
     @IBAction func tapWeak(_ sender: Any) {
-        UIView.animate(withDuration: 3.0, animations: { [weak self] in
+//        UIView.animate(withDuration: 3.0, animations: { [weak self] in
+//            guard let self = self else { return }
+//            self.weakButton.frame = self.weakButton.frame.offsetBy(dx: -400, dy: 0)
+//            self.completion()
+//            self.completion()
+//        }, completion: { [weak self]  _ in
+//            guard let self = self else { return }
+//            self.completion()
+//        })
+        
+        UIView.animate(withDuration: 3.0, delay: 0.5, animations: { [weak self] in
             self?.weakButton.frame = self?.weakButton.frame.offsetBy(dx: -400, dy: 0) ?? CGRect.zero
+            self?.completion()
+            self?.completion()
         }, completion: { [weak self]  _ in
             self?.completion()
         })
         
-        DispatchQueue.main.asyncAfter(deadline: .now() + 1.0, execute: { [weak self] in
+        
+        DispatchQueue.main.asyncAfter(deadline: .now() + 0.4, execute: { [weak self] in
             self?.navigationController?.popViewController(animated: true)
         })
     }
@@ -83,9 +86,9 @@ class NextViewController: UIViewController {
     
     func completion() {
         var a = 0
-//        for i in 0..<10000000 {
-//            a += i
-//        }
+        for i in 0..<5000000 {
+            a += i
+        }
         print("completion")
     }
 }
