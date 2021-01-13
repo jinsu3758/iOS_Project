@@ -32,8 +32,6 @@ class RxViewController: UIViewController {
                 let c = self.doSomething()
 
             })
-            
-        
         
         // 위와 동일
 //        button.rx.tap
