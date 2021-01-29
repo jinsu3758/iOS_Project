@@ -56,14 +56,28 @@ func main_test1() {
 
 func main_test2() {
     main.async {
-        for i in 0...500 {
-            print(i)
-        }
+        print("main async")
     }
-    print("main")
+    for i in 0...500 {
+        print(i)
+    }
     
     // 무조건 main이 먼저
 }
+
+func main_test3() {
+    main.async {
+        print("main async")
+    }
+    for i in 0...500 {
+        print(i)
+    }
+    for i in 0...500 {
+        print(i)
+    }
+}
+
+main_test3()
 
 func all_test1() {
     let background = DispatchQueue.global(qos: .background)
@@ -90,7 +104,7 @@ func all_test1() {
     // 2 3 4 1
     // 4 3 2 1
     // back이 무조건 느리지는 않음 back이 1등할 떄도 있네
-    // 2와 1 만 순서 보장 왜 그렇지...?
+    // 2와 1 만 순서 보장(2가 무조건 빠름) 왜 그렇지...?
     // 4는 여전히 1보다 앞, 1은 1,2,3,4 중에서는 무조건 맨 뒤
     
 }
@@ -141,7 +155,64 @@ func all_test2() {
     // concurrent2와 3은 무조건 순서 보장
 }
 
-all_test2()
+func all_test3() {
+    print("1")
+    
+    concurrent.async {
+        print("2")
+    }
+    
+    concurrent.async {
+        print("3")
+    }
+    print("4")
 
+    // 1 2 3 4 무조건
+}
+
+func serial_test() {
+    serial.sync {
+        for i in 1...100 {
+            print(i)
+        }
+        serial.sync {
+            print("555")
+        }
+    }
+    
+}
+
+func serial_test2() {
+    print("1")
+    serial.async {
+        print("2")
+    }
+    
+    main.async {
+        print("3")
+    }
+    
+    serial.async {
+        print("4")
+    }
+    print("5")
+//    for _ in 0...100 {
+//        print("main")
+//    }
+//
+    serial.sync {
+        print("6")
+    }
+    
+    print("7")
+    
+    // 1 2 5 4 6 7 3
+    // 여전히 메인 async는 제일 마지막
+    // serial 작업 스레드가 무조건 느린건 아니지만 대체적으로 메인스레드보다 늦게 반응함
+    // 기준은 딱히 없는듯 동시적으로 돌아가서 그런듯 그런데 순서는 또 보장함
+    
+}
+
+serial_test2()
 
 
